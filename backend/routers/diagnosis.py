@@ -1,7 +1,8 @@
 
 from fastapi import APIRouter
 from ..models import DiagnoseRequest, DiagnoseResponse, Possibility, Medication
-from ..providers.logic import score, triage_message
+from ..providers.logic import score
+from ..providers import triage
 
 router = APIRouter(prefix="/api", tags=["diagnosis"])
 
@@ -14,5 +15,5 @@ def diagnose(payload: DiagnoseRequest):
     return DiagnoseResponse(
         top=top,
         others=others,
-        advice=f'{triage_message(top.triage)} {result["advice"]}'
+        advice=f'{triage.triage_message(top.triage)} {result["advice"]}'
     )
