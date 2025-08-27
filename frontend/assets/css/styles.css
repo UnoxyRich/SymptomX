@@ -1,0 +1,295 @@
+
+:root {
+  --bg: #0b0f14;
+  --panel: #111827;
+  --soft: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22d3ee;
+  --accent-2: #7c3aed;
+  --danger: #ef4444;
+  --ok: #22c55e;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 800px at 70% -10%, #132032 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: rgba(17,24,39,0.7); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+header img.icon { width: 28px; height: 28px; }
+header .title { font-weight: 700; letter-spacing: 0.2px; }
+header nav { margin-left: auto; display: flex; gap: 8px; }
+button, .btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white; border: none; padding: 10px 14px; border-radius: 10px;
+  cursor: pointer; font-weight: 600;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .2s ease;
+  box-shadow: 0 8px 20px rgba(34,211,238,.15);
+}
+button:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(34,211,238,.22); }
+button.ghost {
+  background: transparent; border: 1px solid rgba(255,255,255,0.08); color: var(--text);
+  box-shadow: none;
+}
+main { padding: 24px; display: grid; gap: 24px; grid-template-columns: 1.4fr 1fr; }
+section.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px; padding: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.25);
+}
+
+h2 { margin: 0 0 12px; }
+.input {
+  width: 100%; background: var(--soft); border: 1px solid rgba(255,255,255,.08);
+  color: var(--text); border-radius: 12px; padding: 12px; min-height: 120px;
+}
+
+.results .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.06); color: var(--text); padding: 6px 10px; border-radius: 999px; margin-right: 8px; margin-bottom: 8px;
+}
+
+.meds { margin-top: 12px; display: grid; gap: 8px; }
+.med-item {
+  display:flex; align-items:center; gap: 12px;
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px; padding: 10px 12px;
+}
+.med-item .actions { display:flex; align-items:center; gap:8px; }
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  display: none;
+}
+.med-item .actions { display:flex; align-items:center; gap:8px; } display: inline-flex; gap: 8px; }
+.med-item a.amz-btn, .med-item a.info-btn {
+  padding: 6px 10px; border-radius: 8px; font-size: 12px; background: #FF9900; color: #111; text-decoration: none; font-weight: 800;
+}
+
+.chat-box { display: flex; flex-direction: column; gap: 10px; height: auto; min-height:0; }
+.chat-stream {
+  flex: 1; overflow: auto; padding: 12px; border-radius: 12px; background: var(--soft); border: 1px solid rgba(255,255,255,.08);
+}
+.msg { display: grid; gap: 4px; margin-bottom: 10px; }
+.msg .who { font-size: 12px; color: var(--muted); }
+.msg .bubble {
+  background: rgba(255,255,255,.06); padding: 10px 12px; border-radius: 12px; white-space: pre-wrap;
+}
+.msg.user .bubble { background: linear-gradient(180deg, rgba(124,58,237,.25), rgba(34,211,238,.22)); }
+
+footer { text-align: center; color: var(--muted); padding: 16px; }
+small.disclaimer { color: var(--muted); }
+
+
+/* --- Custom tweaks (requested) --- */
+
+/* Lighter blue for informational text/notes */
+.info, .callout.info, .text-info, [data-variant="info"] {
+  color: #7dd3fc;
+  border-color: #7dd3fc;
+}
+
+/* Language switch button in light blue */
+.language-switch, .btn.lang, #lang-toggle, [data-role="lang-switch"] {
+  background: #7dd3fc;
+  color: #0b0f14;
+}
+.language-switch:hover, .btn.lang:hover, #lang-toggle:hover, [data-role="lang-switch"]:hover {
+  filter: brightness(1.1);
+}
+
+/* Make assistant chat output taller */
+.chat-output {
+  min-height: 420px;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+
+/* Lighten info color even more (on dark background) */
+.info, .callout.info, .text-info, [data-variant="info"] {
+  color: #7dd3fc !important;
+  border-color: #7dd3fc !important;
+}
+
+/* Keep brand link visual unchanged but clickable */
+.brand-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.brand-link:visited, .brand-link:active, .brand-link:hover, .brand-link:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Language area styling to match light blue theme */
+.lang-area {
+  background: rgba(125, 211, 252, 0.08); /* subtle light-blue wash */
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+.lang-area .language-switch,
+.lang-area .btn,
+.lang-area button,
+.lang-area select {
+  background: #7dd3fc !important;
+  color: #0b0f14 !important;
+  border: none;
+}
+.lang-area .language-switch:hover,
+.lang-area .btn:hover,
+.lang-area button:hover {
+  filter: brightness(1.05);
+}
+
+
+/* Language area styling */
+.lang-area {
+  background: rgba(125, 211, 252, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 12px;
+  padding: 6px 10px;
+}
+
+.lang-area select#lang-select {
+  background: #0b0f14;
+  color: #e5e7eb;
+  border: 1px solid #7dd3fc;
+  border-radius: 10px;
+  padding: 8px 10px;
+  outline: none;
+}
+.lang-area select#lang-select:focus {
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.25);
+}
+
+
+/* Make the small 'info' link in med items light blue */
+.med-item a:not(.amz-btn) {
+  color: #7dd3fc;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(125, 211, 252, 0.6);
+}
+.med-item a:not(.amz-btn):hover {
+  filter: brightness(1.1);
+  border-bottom-color: rgba(125, 211, 252, 0.9);
+}
+
+
+/* Ensure info text is clearly lighter blue on dark bg */
+.text-info, .info, .callout.info, [data-variant="info"] {
+  color: #7dd3fc !important;
+  border-color: #7dd3fc !important;
+}
+
+
+
+/* Bigger input area for "Check Symptoms" */
+#symptoms-input.symptoms-input,
+.symptoms-input {
+  min-height: 220px !important;  /* larger typing canvas */
+  padding: 14px 14px !important;
+  font-size: 16px;
+  line-height: 1.35;
+}
+/* If it's a single-line <input>, visually enlarge it */
+input.symptoms-input {
+  height: 56px !important;
+}
+
+
+
+/* Centered full-width section (e.g., About bar) */
+.full-center {
+  grid-column: 1 / -1;
+  display: grid;
+  place-items: center;
+}
+
+/* Make "Check Symptoms" area longer */
+#symptoms-input.symptoms-input,
+.symptoms-input {
+  min-height: 320px !important;
+  padding: 16px 16px !important;
+  font-size: 16px;
+  line-height: 1.4;
+}
+input.symptoms-input {
+  height: 64px !important;
+}
+
+
+
+/* Longer "Check Symptoms" input */
+#symptoms-input.symptoms-input,
+.symptoms-input {
+  min-height: 360px !important;
+  padding: 16px 16px !important;
+  font-size: 16px;
+  line-height: 1.45;
+}
+input.symptoms-input {
+  height: 68px !important;
+}
+
+
+
+/* Force longer textarea for "Check symptoms" */
+textarea#symptoms {
+  height: clamp(160px, 38vh, 420px) !important;
+}
+
+
+/* ensure main fits viewport without page scroll */
+main { flex: 1; overflow: hidden; }
+
+.med-left{flex:1; min-width:0}
+
+/* Buttons */
+.btn{padding:6px 12px; border-radius:8px; font-size:12px; font-weight:800; border:none; cursor:pointer; display:inline-flex; align-items:center; text-decoration:none;}
+.amz-btn{ background:#FF9900; color:#111; }
+.info-btn{ background:#22d3ee; color:#0b0f14; }
+.back-btn{ background:#22d3ee; color:#0b0f14; }
+
+/* Ensure layout scales without pushing content down on zoom */
+html, body {
+  height: 100%;
+  overflow: hidden; /* prevent page scroll */
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  overflow: hidden;
+}
+section.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* allow flex children to shrink */
+}
+.chat-box, .results {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+/* Zoom-safe layout */
+body{display:flex;flex-direction:column;height:100vh;}
+main{display:grid;grid-auto-rows:1fr;align-content:stretch;}
+section.card{min-height:0;}
+.results,.chat-box{flex:1;min-height:0;overflow:auto;}

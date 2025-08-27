@@ -1,0 +1,19 @@
+{
+  "nav.about": "About",
+  "section.diagnose": "Check symptoms",
+  "section.chat": "Chat with assistant",
+  "section.about": "About",
+  "btn.diagnose": "Diagnose",
+  "btn.clear": "Clear",
+  "btn.send": "Send",
+  "label.most_likely": "Most likely",
+  "label.other_poss": "Other possibilities",
+  "placeholder.symptoms": "Describe your symptoms...",
+  "placeholder.chat": "Ask health questions...",
+  "disclaimer": "This tool is for reference only and not a medical diagnosis. Seek licensed care when available.",
+  "about.goal": "This project helps people in areas with limited access to doctors understand symptoms and self-care options. It is for reference only.",
+  "about.tech": "Tech: FastAPI, Pydantic, WebSocket, vanilla JS, and free APIs (Lorem Picsum, JSONPlaceholder) ready to plug in.",
+  "about.langs": "Languages: English (default), 中文. Switch using the dropdown above.",
+  "chat.ready": "Chat connected. How can I help?",
+  "chat.fallback": "Connection lost. I will reply over HTTP."
+}

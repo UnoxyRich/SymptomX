@@ -1,0 +1,19 @@
+{
+  "nav.about": "关于",
+  "section.diagnose": "症状自查",
+  "section.chat": "与助手对话",
+  "section.about": "关于",
+  "btn.diagnose": "诊断",
+  "btn.clear": "清空",
+  "btn.send": "发送",
+  "label.most_likely": "最可能",
+  "label.other_poss": "其他可能",
+  "placeholder.symptoms": "描述你的症状…",
+  "placeholder.chat": "问我健康问题…",
+  "disclaimer": "本工具仅供参考，不能替代医生诊断。如有条件请尽快就医。",
+  "about.goal": "该项目面向医疗资源不足地区的人群，帮助理解症状与自我护理方案，仅作参考。",
+  "about.tech": "技术：FastAPI、Pydantic、WebSocket、原生JS，以及可接入的免费API（Lorem Picsum、JSONPlaceholder）。",
+  "about.langs": "支持语言：英语（默认）、中文。可使用顶部下拉切换。",
+  "chat.ready": "聊天连接成功，我能如何帮助你？",
+  "chat.fallback": "连接中断，将使用HTTP回复。"
+}

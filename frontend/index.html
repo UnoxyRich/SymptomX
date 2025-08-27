@@ -1,0 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>SymptomX — AI Health Helper</title> <link rel="icon" type="image/svg+xml" href="/assets/img/icon.svg"> <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+<header> <img class="icon" src="/assets/img/icon.svg" alt="icon"> <div class="title"><a href="about.html" class="brand-link" data-i18n="brand">SymptomX</a></div> <nav class="lang-area"> <select id="lang-select" title="Language"> <option value="en" selected>English</option> <option value="zh">中文</option> </select> </nav>
+</header> <main>
+
+ <section class="card"> <h2 data-i18n="section.diagnose">Check symptoms</h2> <form id="diagnosis-form"> <textarea id="symptoms" class="input" placeholder="Describe your symptoms..." class="symptoms-input id="symptoms-input" class="symptoms-input" class="symptoms-input" id="symptoms-input">></textarea> <div style="margin-top:10px; display:flex; gap:8px;"> <button type="submit" class="btn" data-i18n="btn.diagnose">Diagnose</button> <button type="reset" class="btn ghost" data-i18n="btn.clear">Clear</button> </div> </form> <div id="diagnosis-results" class="results" style="margin-top:14px;"></div> </section> <section class="card"> <h2 data-i18n="section.chat">Chat with assistant</h2> <div class="chat-box"> <div id="chat-stream" class="chat-stream"></div> <form id="chat-form" style="display:flex; gap:8px;"> <input id="chat-input" class="input" style="min-height:auto;" placeholder="Ask health questions..." /> <button type="submit" class="btn" data-i18n="btn.send">Send</button> </form> </div> </section> <!-- moved to about.html -->
+</main> <footer>© SymptomX — built for reliability in low-resource settings</footer>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
